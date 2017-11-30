@@ -6,9 +6,9 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 
 const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'abaut', component: AboutComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' }
 ];
 
-export const APP_ROUTING = RouterModule.forRoot(ROUTES, { useHash: true});
+export const APP_ROUTING = RouterModule.forRoot(ROUTES);
