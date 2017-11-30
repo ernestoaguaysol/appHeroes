@@ -2,7 +2,7 @@
 <hr>
 
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
       <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
       <div class="card-body">
         <h4 class="card-title">{{heroe.nombre}}</h4>
@@ -10,10 +10,12 @@
         <p class="card-text">
           <small class="text-muted">{{ heroe.aparicion }}</small>
         </p>
-        <!-- <button class="btn btn-outline-primary btn-block">
+        <button
+          (click)="verHeroe(i)" 
+          class="btn btn-outline-primary btn-block">
           Ver mas...
-        </button> -->
-        <a href="#" class="btn btn-outline-primary">Ver mas link...</a>
+        </button>
+        <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> -->
       </div>
     </div>
 </div>
